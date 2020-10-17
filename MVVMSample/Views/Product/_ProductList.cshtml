@@ -1,0 +1,46 @@
+﻿@using MVVMEntityLayer
+@using CommonLibrary.PagerClasses
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                <a href="#" data-custom-cmd="sort" data-custom-arg="Name">Product Name</a>
+            </th>
+            <th>
+                <a href="#" data-custom-cmd="sort" data-custom-arg="ProductNumber">Product Number</a>
+            </th>
+            <th class="text-right">
+                <a href="#" data-custom-cmd="sort" data-custom-arg="StandardCost">Cost</a>
+            </th>
+            <th class="text-right">
+                <a href="#" data-custom-cmd="sort" data-custom-arg="ListPrice">Price</a>
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product item in Model.Products)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Name)</td>
+            <td>@Html.DisplayFor(m => item.ProductNumber)</td>
+            <td class="text-right">@Html.DisplayFor(m => item.StandardCost)</td>
+            <td class="text-right">@Html.DisplayFor(m => item.ListPrice)</td>
+            <td><a href="#" data-custom-cmd="edit" data-custom-arg="@item.ProductID" class="btn btn-primary">Edit</a></td>
+            <td><a href="#" onclick="deleteProduct(@item.ProductID);" class="btn btn-danger">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<ul class="pagination">
+    @foreach (PagerItem item in Model.Pages)
+    {
+        <li class="page-item @item.CssClass">
+            <a class="page-link" href="#" data-custom-cmd="page" data-custom-arg="@item.Argument" title="@item.Tooltip">@Html.Raw(item.Text)</a>
+        </li>
+
+    }
+</ul>
+

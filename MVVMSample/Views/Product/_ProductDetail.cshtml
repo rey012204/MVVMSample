@@ -1,0 +1,47 @@
+﻿@model MVVMEntityLayer.Product
+<div asp-validation-summary="All" class="text-danger"></div>
+<input asp-for="ProductID" type="hidden" />
+<div class="form-group">
+    <label asp-for="Name" class="control-label"></label>
+    <input asp-for="Name" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="ProductNumber" class="control-label"></label>
+    <input asp-for="ProductNumber" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Color" class="control-label"></label>
+    <input asp-for="Color" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="StandardCost" class="control-label"></label>
+    <input asp-for="StandardCost" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="ListPrice" class="control-label"></label>
+    <input asp-for="ListPrice" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Size" class="control-label"></label>
+    <input asp-for="Size" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="Weight" class="control-label"></label>
+    <input asp-for="Weight" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="SellStartDate" class="control-label"></label>
+    <input asp-for="SellStartDate" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="SellEndDate" class="control-label"></label>
+    <input asp-for="SellEndDate" class="form-control" />
+</div>
+<div class="form-group">
+    <label asp-for="DiscontinuedDate" class="control-label"></label>
+    <input asp-for="DiscontinuedDate" class="form-control" />
+</div>
+<div class="form-group">
+    <button data-custom-cmd="save" class="btn btn-primary">Save</button>
+    <button formnovalidate="formnovalidate" class="btn btn-info" onclick="cancel();">Cancel</button>
+</div>
